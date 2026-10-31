@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d18">
+<title>REALITY CHECK</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080d18;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+h1 {
+  color: #42a5ff;
+  font-size: 34px;
+  margin-top: 45px;
+  text-shadow: 0 0 20px #168cff;
+}
+
+.subtitle {
+  color: #aab6c8;
+  font-size: 16px;
+}
+
+.panel {
+  margin-top: 40px;
+  padding: 25px 15px;
+  background: #111c2e;
+  border: 1px solid #2369a5;
+  border-radius: 20px;
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 20px;
+  background: #168cff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+input {
+  margin-top: 20px;
+  max-width: 100%;
+  color: white;
+}
+
+#result {
+  margin-top: 25px;
+  color: #42a5ff;
+  font-size: 17px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>REALITY CHECK</h1>
+
+<p class="subtitle">
+Узнай, что перед тобой: реальность или искусственный интеллект.
+</p>
+
+<div class="panel">
+
+<h2>Проверка подлинности</h2>
+
+<p>Выбери фотографию или видео для проверки.</p>
+
+<input type="file" id="file" accept="image/*,video/*">
+
+<button onclick="checkFile()">
+ПРОВЕРИТЬ
+</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+function checkFile() {
+  const file = document.getElementById("file").files[0];
+  const result = document.getElementById("result");
+
+  if (!file) {
+    result.innerText = "Сначала выбери файл!";
+    return;
+  }
+
+  result.innerText =
+    "Файл выбран! Настоящий AI-анализ будет подключён на следующем этапе.";
+}
+</script>
+
+</body>
+</html>
